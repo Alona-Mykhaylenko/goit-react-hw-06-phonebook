@@ -1,0 +1,15 @@
+.formBox {
+  width: 300px;
+  padding: 20px 20px;
+  border: 2px solid black;
+}
+
+.submitButton {
+  display: block;
+  border-radius: 5px;
+}
+
+.label {
+  margin-bottom: 20px;
+  display: block;
+}
