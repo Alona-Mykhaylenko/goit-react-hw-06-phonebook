@@ -24,8 +24,7 @@ class ContactForm extends Component {
           return;
         }
 
-    this.props.addContactProp(this.state.name, this.state.number);
-    // Why can't I delete the line above? I do dispatch addContact below... 
+    this.props.addContactProp(this.state.name, this.state.number); 
     this.setState({ name: "", number: "" });
   };
 
