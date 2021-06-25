@@ -9,15 +9,14 @@ const addContact = createAction('app/addContact', (name, number) =>{
             id: uuidv4(),
             name,
             number,
-            filter: '',
-          }
+                      }
 
     }
 })
 
 
-const handleDelete = createAction('app/handleDelete')
+const deleteContact = createAction('app/deleteContact')
 
 const handleChange = createAction('app/handleChange')
 
-export {addContact, handleDelete, handleChange};
+export {addContact, deleteContact, handleChange};

@@ -1,11 +1,11 @@
 import styles from "./contactList.module.css";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { handleDelete } from "../../redux/app-actions";
+import { deleteContact } from "../../redux/app-actions";
 
 
 
-const ContactList = ({ filteredContactsProp, handleDeleteProp }) => {
+const ContactList = ({ filteredContactsProp, deleteContactProp }) => {
   return (
     <ul>
       {filteredContactsProp.map((contact) => (
@@ -14,7 +14,7 @@ const ContactList = ({ filteredContactsProp, handleDeleteProp }) => {
           <button
             className={styles.button}
             type="button"
-            onClick={() => handleDeleteProp(contact.id)}
+            onClick={() => deleteContactProp(contact.id)}
           >
             Delete
           </button>
@@ -34,7 +34,7 @@ const mapStateToProps = (state) =>{
 }};
 
 const mapDispatchToProps = dispatch =>({
-  handleDeleteProp: (id) => dispatch (handleDelete(id))
+  deleteContactProp: (id) => dispatch (deleteContact(id))
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(ContactList);
@@ -43,7 +43,7 @@ export default connect(mapStateToProps,mapDispatchToProps)(ContactList);
 
 ContactList.propTypes = {
   filteredContactsProp: PropTypes.array.isRequired,
-  handleDeleteProp: PropTypes.func.isRequired,
+  deleteContactProp: PropTypes.func.isRequired,
 };
 
 

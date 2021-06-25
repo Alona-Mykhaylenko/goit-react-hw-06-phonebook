@@ -80,4 +80,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
 
 ContactForm.propTypes = {
   addContactProp: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  })).isRequired,
 };
